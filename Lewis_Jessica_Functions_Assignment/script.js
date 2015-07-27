@@ -3,74 +3,90 @@
  */
 
     
-//variables
+var yes;
+yes = true;
+var no;
+no = false;
 var myLottoNum;
-    myLottoNum = prompt ("Welcome! Would you like to see your lottery number for the Florida Lottery? y/n");
+    myLottoNum = prompt ("Welcome! Would you like to see your lottery number for the Florida Lottery? yes/no");
+
 
 
 
 //functions
-function lottoValidation (parameters) {
+function(lottoValid)
+{
     var lottoValidation;
-    lottoValidation = parameters.myLotto;
+    lottoValidation = "run";
     var timesClicked = 1;
 
-    while (lottoValidation === "") {
-        lottoValidation = prompt("Dont leave this blank!\n\nPlease enter y/n:");
+    while (lottoValidation === "")
+    {
+        lottoValidation = prompt("Dont leave this blank! Please enter y/n:");
 
         timesClicked++;
 
-        if (timesClicked === 10) {
-            console.log("You have exceeded the amount of allowable clicks for this lottery.");
+        if (timesClicked === 10)
+        {
+            alert("You have exceeded the amount of allowable clicks for this lottery.");
             break;
         }
     }
     return lottoValidation;
 
 
-    //function to generate random numburs
+
+
+
+    /* running a function to generate random numbers*/
 
 
 //first way to generate numbers
-    function lottofirst(parameters) {
-        var values;
+    function lottofirst(parameters)
+    {
         var n = parameters.n;
         var min = parameters.min;
         var max = parameters.max;
+        var values;
+        values = [];
+        var i = max;
+
+        do ((i = 1) (i <= n) (i++));
+        while (i >= min);
         {
-            values = [];
-            var i = max;
-            while (i >= min) values.push(i--);
+            values.push(i--);
             var results = [];
             var maxIndex = max;
+            maxIndex--;
+            var index = Math.floor(maxIndex * Math.random());
+            results.push(values[index]);
+            values[index] = values[maxIndex];
+        }
+
+        return results;
+
+
+        function runmyNbrs()
+        {
+            runmyNbrs = true;
+
+            if(confirm(lotto(8, 1, 100)))
             {
-                do (i = 1; i <= n;
-                i++
-            )
-                {
-                    maxIndex--;
-                    var index = Math.floor(maxIndex * Math.random());
-                    results.push(values[index]);
-                    values[index] = values[maxIndex];
+                sort(function (a, b))
+                return (a - b);
+            }
 
-                    return results;
-                    function runmynbrs()
-                    runmynbrs = true
-
-                    do
-                    {
-                        if (confirm(lotto(8, 1, 100).sort(function (a, b) {
-                                return a - b;
-                            }))) {
-                        } else {
-                            runmynbrs = false;
-                        }
-                    } while (runmynbrs());
-                    console.log("Here are your lottery numbers!");
-                }
+            else
+            {
+                runmyNbrs = false;
+            }
+            while(runmyNbrs())
+            {
+            alert("Here are your lottery numbers!");
             }
         }
     }
+}
 
 
 //simpler way to generate 6 random lottery numbers
