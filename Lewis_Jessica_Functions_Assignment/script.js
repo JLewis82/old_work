@@ -32,7 +32,7 @@ function(lottoValid)
             break;
         }
     }
-    return lottoValidation;
+    return lottoValid;
 
 
 
@@ -72,7 +72,7 @@ function(lottoValid)
 
             if(confirm(lotto(8, 1, 100)))
             {
-                sort(function (a, b))
+                sort(function (a, b)
                 return (a - b);
             }
 
